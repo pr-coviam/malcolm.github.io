@@ -25,8 +25,8 @@ self.addEventListener('push', function(event) {
 
 self.addEventListener('notificationclick', function(event) {
   if (Notification.prototype.hasOwnProperty('data')) {
-    console.log('Using Data');
     var url = event.notification.data.url;
+    console.log(url);
     event.waitUntil(clients.openWindow(url));
   } else {
     event.waitUntil(getIdb().get(KEY_VALUE_STORE_NAME,
