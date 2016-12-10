@@ -36,7 +36,8 @@ self.addEventListener('notificationclick', function(event) {
       }
     }
     if (clients.openWindow) {
-      return clients.openWindow(website_link);
+      //return clients.openWindow(website_link);
+      window.location(website_link);
     }
   }));
 });
