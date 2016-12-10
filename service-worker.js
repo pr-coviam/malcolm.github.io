@@ -22,7 +22,7 @@ self.addEventListener('notificationclick', function(event) {
   console.log('On notification click: ', event.notification.tag);
   // Android doesn’t close the notification when you click on it
   // See: http://crbug.com/463146
-  window.location(website_link);
+  return clients.openWindow("https://pr-coviam.github.io/malcolmPush/");
   event.notification.close();
 
 });
