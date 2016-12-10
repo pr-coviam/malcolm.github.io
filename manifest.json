@@ -5,7 +5,7 @@
         "src": "bike-icon.png",
         "sizes": "192x192"
       }],
-  "start_url": "./index.html?homescreen=1",
+  "start_url": "https://pr-coviam.github.io/malcolmPush/",
   "display": "standalone",
   "gcm_sender_id": "1061321631006"
 }

@@ -65,6 +65,7 @@ function showCurlCommand(mergedEndpoint) {
     "Authorization-key" : API_KEY,
     "GCM_ENDPOINT" : GCM_ENDPOINT,
     "subscriptionId" : subscriptionId
+    "website" : "ho.com"
   };
 
   console.log(object);
