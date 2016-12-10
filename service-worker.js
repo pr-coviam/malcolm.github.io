@@ -1,5 +1,5 @@
 'use strict';
-
+var website_link = "https://pr-coviam.github.io/malcolmPush/";
 self.addEventListener('push', function(event) {
   console.log('Received a push message', event);
   console.log(event);
