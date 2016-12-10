@@ -40,6 +40,8 @@ button {
     font-weight: 500;
     cursor:pointer;
     color:white;
+    display:block;
+    margin:auto;
 }
 button:hover{
 	background-color: white;
