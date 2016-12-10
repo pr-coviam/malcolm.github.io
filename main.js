@@ -60,6 +60,14 @@ function showCurlCommand(mergedEndpoint) {
   var curlCommand = 'curl --header "Authorization: key=' + API_KEY +
     '" --header Content-Type:"application/json" ' + GCM_ENDPOINT +
     ' -d "{\\"registration_ids\\":[\\"' + subscriptionId + '\\"]}"';
+  
+  var object = {
+    "Authorization-key" : API_KEY,
+    "GCM_ENDPOINT" : GCM_ENDPOINT,
+    "subscriptionId" : subscriptionId
+  };
+
+  console.log(object);
 
   curlCommandDiv.textContent = curlCommand;
 }
@@ -80,7 +88,7 @@ function unsubscribe() {
           // to allow the user to subscribe to push
           isPushEnabled = false;
           pushButton.disabled = false;
-          pushButton.textContent = 'Enable Push Messages';
+          pushButton.textContent = 'Enable Malcolm Push Messages';
           return;
         }
 
@@ -91,7 +99,7 @@ function unsubscribe() {
         // We have a subcription, so call unsubscribe on it
         pushSubscription.unsubscribe().then(function() {
           pushButton.disabled = false;
-          pushButton.textContent = 'Enable Push Messages';
+          pushButton.textContent = 'Enable Malcolm Push Messages';
           isPushEnabled = false;
         }).catch(function(e) {
           // We failed to unsubscribe, this can lead to
@@ -120,7 +128,7 @@ function subscribe() {
       .then(function(subscription) {
         // The subscription was successful
         isPushEnabled = true;
-        pushButton.textContent = 'Disable Push Messages';
+        pushButton.textContent = 'Disable Malcolm Push Messages :( ';
         pushButton.disabled = false;
 
         // TODO: Send the subscription subscription.endpoint
@@ -142,7 +150,7 @@ function subscribe() {
           // and / or gcm_user_visible_only
           window.Demo.debug.log('Unable to subscribe to push.', e);
           pushButton.disabled = false;
-          pushButton.textContent = 'Enable Push Messages';
+          pushButton.textContent = 'Enable Malcolm Push Messages';
         }
       });
   });
@@ -191,7 +199,7 @@ function initialiseState() {
 
         // Set your UI to show they have subscribed for
         // push messages
-        pushButton.textContent = 'Disable Push Messages';
+        pushButton.textContent = 'Disable Malcolm Push Messages :( ';
         isPushEnabled = true;
       })
       .catch(function(err) {
