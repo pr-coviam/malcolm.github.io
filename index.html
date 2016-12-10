@@ -1,19 +1,5 @@
 <!doctype html>
-<!--
-Copyright 2014 Google Inc. All Rights Reserved.
 
-Licensed under the Apache License, Version 2.0 (the "License");
-you may not use this file except in compliance with the License.
-You may obtain a copy of the License at
-
-  http://www.apache.org/licenses/LICENSE-2.0
-
-Unless required by applicable law or agreed to in writing, software
-distributed under the License is distributed on an "AS IS" BASIS,
-WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-See the License for the specific language governing permissions and
-limitations under the License.
--->
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -44,11 +30,14 @@ limitations under the License.
 
     <!-- Include manifest file in the page -->
     <link rel="manifest" href="manifest.json">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
   </head>
 
-  <body style="background:'http://static.comicvine.com/uploads/original/11/117031/4336945-0387946855-tumbl.gif';">
-    <h1>Push Messaging &amp; Notifications</h1>
+  <body>
+  <div class="container">
+    <h1>MalcolmPush - Chrome Push Notifications</h1>
 
     <p>
         <button class="js-push-button" disabled>
@@ -60,12 +49,23 @@ limitations under the License.
     <br />
 
     <h2>cURL Command to Send Push</h2>
-    <div class="js-curl-command"></div>
+      <textarea class="js-curl-command" id="code"></textarea>
+<!--      <div class="js-curl-command"></div> -->
+      <button class="btn" data-clipboard-action="cut" data-clipboard-target="#code">
+        Cut to clipboard
+      </button>
+    
 
+  </div>
+    
     <script src="config.js"></script>
     <script src="demo.js"></script>
     <script src="main.js"></script>
+    <script src="https://cdn.jsdelivr.net/clipboard.js/1.5.13/clipboard.min.js"></script>
 
+    <script type="text/javascript">
+      new Clipboard('.btn');
+    </script>
     <!-- Built with love using Web Starter Kit -->
   </body>
 </html>
