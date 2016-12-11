@@ -1,7 +1,20 @@
 'use strict';
 self.addEventListener('push', function(event) {
   console.log('Received a push message', event);
-  console.log(event);
+
+  /*
+  // Since this is no payload data with the first version
+  // of Push notifications, here we'll grab some data from
+  // an API and use it to populate a notification
+    fetch(API_ENDPOINT).then(function(response) {
+      if (response.status !== 200) {
+        console.log('Looks like there was a problem. Status Code: ' +
+          response.status);
+        // Throw an error so the promise is rejected and catch() is executed
+        throw new Error();
+      }
+  */
+
 
   var title = 'Yay a message.';
   var body = 'We have received a push message.';
